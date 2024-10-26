@@ -1,0 +1,41 @@
+/*CARD-MOVIE*/
+
+.cardmovie {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 400px;
+    flex: 1 0 25%;
+    margin-bottom: 85px;
+    border: 1px #60a4e8 solid;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.cardmovie .moviePoster {
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cardmovie .moviename {
+    color: #60a4e8;
+    text-align: center;
+    font-size: 16px;
+}
+
+.cardmovie .movieDetails {
+    width: 100%;
+    height: 35px;
+    border: 2px #60a4e8 solid;
+    border-radius: 10px;
+    background-color: transparent;
+    text-transform: uppercase;
+    color: #60a4e8;
+    cursor: pointer;
+}
+
+.cardmovie .movieDetails:hover {
+    background-color: #145ea7;
+}
