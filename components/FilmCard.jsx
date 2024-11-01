@@ -1,7 +1,8 @@
+import React, { memo } from 'react';
 import classes from '../css_module/filmcard.module.css';
 
-export function FilmCard({ films }) {
-
+export const FilmCard = memo(({ films }) => {
+    console.log('Render FilmCard');
     return (
         <>
             {
@@ -9,7 +10,7 @@ export function FilmCard({ films }) {
                     <div key={index} className={classes.cardmovie}>
                         <div
                             className={classes.moviePoster}
-                            style={{backgroundImage: `url(${Poster})`}}
+                            style={{ backgroundImage: `url(${Poster})` }}
                         ></div>
                         <div className={classes.moviename}>{Title}</div>
                         <button className={classes.movieDetails}>Подробнее...</button>
@@ -18,4 +19,4 @@ export function FilmCard({ films }) {
             }
         </>
     );
-}
+});

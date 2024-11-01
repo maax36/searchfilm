@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { FilmCard } from "./FilmCard";
 
-export function Films({ search }) {
+export const Films = memo(({ search }) => {
     const apiKey = '19b08fe1';
     const [films, setFilms] = useState([]);
-
+    console.log("render Films");
     useEffect(() => {
         async function fetchFilms() {
             try {
@@ -21,10 +21,16 @@ export function Films({ search }) {
             }
         }
 
-        fetchFilms();
+        if (search) {
+            fetchFilms();
+        } else {
+            setFilms([]);
+        }
     }, [search]);
 
-    return <div className="moviesContainer">
-        <FilmCard films={films} />
-    </div>;
-}
+    return (
+        <div className="moviesContainer">
+            {films.length > 0 ? <FilmCard films={films} /> : null}
+        </div>
+    );
+});
